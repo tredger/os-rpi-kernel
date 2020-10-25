@@ -13,18 +13,19 @@ fi
 
 echo "`yellow [START]` build kernel and modules..."
 	pushd ${DOWNLOADS}/kernel
-		# add kernel branding for rancheros
-		sed -i 's/^EXTRAVERSION =.*/EXTRAVERSION = -rancheros/g' Makefile
+		# add kernel branding for burmilla
+		sed -i 's/^EXTRAVERSION =.*/EXTRAVERSION = -burmilla/g' Makefile
 		export LOCALVERSION=""
 
 		# configure the kernel
+		echo "CONFIG_BCMGENET=y" >> arch/arm64/configs/$DEFCONFIG
 		$MAKE_CMD $DEF_CONFIG
 
 		# Save information about the built kernel
 		KERNEL_RELEASE=$($MAKE_CMD kernelrelease | grep "^[45]")
 		KERNEL_VERSION=$($MAKE_CMD kernelversion | grep "^[45]")
 		echo "$KERNEL_RELEASE" > /source/dist/kernelrelease
-		echo "v$KERNEL_VERSION-rancher" > /source/dist/version
+		echo "v$KERNEL_VERSION" > /source/dist/version
 
 		# copy .config to the /source/build/kernel directory
 		cp .config /source/build/kernel/$KERNEL_RELEASE.config
@@ -49,6 +50,7 @@ echo "`yellow [START]` build kernel and modules..."
 		cp arch/arm64/boot/Image $INSTALL_DIR/boot/kernel8.img
 		cp arch/arm64/boot/dts/broadcom/bcm2710-rpi-3-b.dtb $INSTALL_DIR/boot/
 		cp arch/arm64/boot/dts/broadcom/bcm2710-rpi-3-b-plus.dtb $INSTALL_DIR/boot/
+		cp arch/arm64/boot/dts/broadcom/bcm2711-rpi-4-b.dtb $INSTALL_DIR/boot/
 		cp arch/arm64/boot/dts/overlays/*.dtbo $INSTALL_DIR/boot/overlays/
 	popd
 echo "`green [FINISHED]` build kernel and modules..."

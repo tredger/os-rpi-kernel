@@ -1,7 +1,7 @@
 # OS RaspberryPI Kernel
-![GitHub release](https://img.shields.io/github/v/release/Jason-ZW/os-raspberrypi.svg)
+![GitHub release](https://img.shields.io/github/v/release/burmilla/os-rpi-kernel.svg)
 
-This repo used to build rancheros raspberrypi. Fetch all resource files from the upstream repositories:
+This repo used to build burmillaos raspberrypi. Fetch all resource files from the upstream repositories:
 - [https://github.com/raspberrypi/linux](https://github.com/raspberrypi/linux)
 - [https://github.com/raspberrypi/firmware](https://github.com/raspberrypi/firmware)
 
@@ -14,8 +14,10 @@ This repo used to build rancheros raspberrypi. Fetch all resource files from the
 make
 ```
 
-## License
-Copyright (c) 2014-2019 [Rancher Labs, Inc.](http://rancher.com)
+# License
+Copyright (c) 2020 Project Burmilla
+
+Copyright (c) 2014-2020 [Rancher Labs, Inc.](http://rancher.com)
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
