@@ -5,7 +5,7 @@ ARG DAPPER_HOST_ARCH
 ARG DOWNLOADS_DIR=/usr/src/downloads
 ARG KERNEL_ARCH=arm64
 ARG KERNEL_URL=https://github.com/raspberrypi/linux.git
-ARG KERNEL_BRANCH=rpi-5.9.y
+ARG KERNEL_BRANCH=rpi-5.10.y
 ARG FIRMWARE_URL=https://github.com/raspberrypi/firmware.git
 ARG FIRMWARE_BRANCH=master
 
