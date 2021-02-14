@@ -5,9 +5,9 @@ ARG DAPPER_HOST_ARCH
 ARG DOWNLOADS_DIR=/usr/src/downloads
 ARG KERNEL_ARCH=arm64
 ARG KERNEL_URL=https://github.com/raspberrypi/linux.git
-ARG KERNEL_BRANCH=rpi-5.4.y
+ARG KERNEL_BRANCH=rpi-5.10.y
 ARG FIRMWARE_URL=https://github.com/raspberrypi/firmware.git
-ARG FIRMWARE_BRANCH=master
+ARG FIRMWARE_BRANCH=stable
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive DEBCONF_NOWARNINGS=yes apt-get install -y --no-install-recommends \
 	apt-utils \
