@@ -6,6 +6,8 @@ git tag ${VERSION}
 git checkout tags/${VERSION} -b ${VERSION}
 
 github-release release --user burmilla --repo os-rpi-kernel --tag ${VERSION} --pre-release
+echo Waiting 30 seconds after release creation to make sure that GitHub is ready for uploads
+sleep 30s
 
 for file in $(ls dist/kernel); do
 	github-release upload  --user burmilla --repo os-rpi-kernel --tag ${VERSION} --file ./dist/kernel/${file} --name ${file}
